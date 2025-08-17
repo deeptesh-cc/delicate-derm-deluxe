@@ -17,8 +17,11 @@
 }
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6{
     font-family: var(--font-title);
-    color: var(--color-dark);
-    line-height: 1.1;
+    color: var(--color-dark)!important;
+    line-height: 1.1!important;
+}
+a{
+    text-decoration: none !important;
 }
 body{
     font-family: var(--font-body) !important;
@@ -34,30 +37,30 @@ body{
     position: relative;
 }
 .button{
-    padding: .75rem 1.63rem;
+    padding: .75rem 1.63rem !important;
     text-transform: uppercase;
-    font-weight: 700;
-    border-radius: .44rem;
-    line-height: 1.25;
-    font-size: 1rem;
+    font-weight: 700 !important;
+    border-radius: .44rem !important;
+    line-height: 1.25 !important;
+    font-size: 1rem !important;
 }
 .button-solid{
-    background-color: var(--color-secondary);
-    color: var(--color-white);
+    background-color: var(--color-secondary) !important;
+    color: var(--color-white) !important;
 }
 .button-solid:hover{
-    background-color: var(--color-dark);
-    color: var(--color-white);
+    background-color: var(--color-dark) !important;
+    color: var(--color-white) !important;
 }
 .button-outline{
-    background-color: transparent;
-    border: 1px solid var(--color-dark);
-    color: var(--color-dark);
+    background-color: transparent!important;
+    border: 1px solid var(--color-dark)!important;
+    color: var(--color-dark)!important;
 }
 .button-outline:hover{
-    background-color: var(--color-secondary);
-    color: var(--color-white);
-    border-color: transparent;
+    background-color: var(--color-secondary)!important;
+    color: var(--color-white)!important;
+    border-color: transparent!important;
 }
 .section-title{
     margin-bottom: 3rem;
@@ -67,13 +70,13 @@ body{
     margin: 0;
 }
 .section-title.light h2{
-    color: var(--color-white);
+    color: var(--color-white) !important;
 }
 .sectionGap{
     padding: 4.33rem 0;
 }
 .navbar{
-    position: absolute;
+    position: absolute !important;
     width: 100%;
     z-index: 99;
     border-bottom: 1px solid var(--color-border);
@@ -100,7 +103,7 @@ body{
     }
 }
 ul{
-    padding: 0;
+    padding: 0 !important;
     margin: 0 !important;
     list-style: none;
 }
@@ -136,7 +139,7 @@ ul{
 }
 .heroBanner::before{
     content: "";
-    background: url(../images/backgrounds/hero-bg-tex.png) no-repeat;
+    background: url(../../../images/backgrounds/hero-bg-tex.png) no-repeat;
     background-size: cover;
     background-position: center;
     position: absolute;
@@ -172,7 +175,7 @@ ul{
 }
 .aboutUsArea{
     position: relative;
-    background: url(../images/backgrounds/about-bg.jpg) no-repeat;
+    background: url(../../images/backgrounds/about-bg.jpg) no-repeat;
     background-size: cover !important;
     background-position: center;
 }
@@ -215,7 +218,7 @@ ul{
     font-family: var(--font-title);
 }
 .counter-circle.light h4, .counter-circle.light p{
-    color: var(--color-white);
+    color: var(--color-white) !important;
 }
 .category-circle{
     display: block;
@@ -242,7 +245,7 @@ ul{
     background: linear-gradient(180deg, rgba(var(--color-dark-rgb), 0) 42%, rgba(var(--color-dark-rgb), 0.85) 100%);
 }
 .category-circle .overlay-content h4{
-    color: var(--color-white);
+    color: var(--color-white) !important;
     font-size: 1.63rem;
 }
 .category-circle .overlay-content span{
@@ -251,6 +254,9 @@ ul{
     font-size: 0.92rem;
     padding: 0.3rem 0.5rem;
     border-radius: 0.44rem;
+}
+.product-block{
+    margin-bottom: 1.6rem;
 }
 .product-block .inner-box{
     background-color: var(--color-white);
@@ -270,6 +276,7 @@ ul{
     background-color: var(--color-dark);
     color: var(--color-white);
     padding: 0.09rem 0.62rem;
+    text-transform: uppercase;
 }
 .product-block .inner-box .image-box .overlay-btns{
     position: absolute;
@@ -362,24 +369,119 @@ ul{
     margin-top: 1rem;
 }
 .accordion-item{
-    border: 0;
+    border: 0 !important;
 }
 .accordion-button{
-    font-size: 1.63rem;
+    font-size: 1.63rem !important;
     color: var(--color-dark) !important;
     background-color: transparent !important;
     border-bottom: 1px solid var(--color-border) !important;
     box-shadow: none !important;
-    padding: 1.74rem 0;
+    padding: 1.74rem 0 !important;
 }
 .accordion-button::after{
-    background-image: url(../images/icons/arrow-right.svg) !important;
+    background-image: url(../../images/icons/arrow-right.svg) !important;
 }
 .accordion-button:not(.collapsed)::after{
     transform: none !important;
 }
 .accordion-body{
-    padding: 1rem 0;
+    padding: 1rem 0 !important;
+}
+footer{
+    background-color: var(--color-dark);
+}
+footer .footer-body{
+    padding: 5.13rem 0 3.63rem;
+}
+footer p, footer a{
+    color: var(--color-border) !important;
+}
+footer a{
+    font-size: 1rem !important;
+}
+footer .footer-bottom{
+    padding: 1.25rem 0;
+    text-align: center;
+    border-top: 1px solid var(--color-border);
+    font-size: 1rem;
+}
+footer .feature-block{
+    padding: 1.5rem;
+    text-align: center;
+    border: 1px dashed var(--color-border);
+    border-radius: .63rem;
+    width: 100%;
+}
+footer .feature-block p{
+    margin: 0;
+    color: var(--color-border);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.06rem;
+    line-height: 1.4;
+    margin-top: 0.44rem;
+}
+footer .logo-area img{
+    max-width: 19rem;
+    filter: brightness(100);
+}
+footer .logo-area{
+    margin-top: 4.38rem;
+}
+.footer-widget h3{
+    color: var(--color-white) !important;
+    font-size: 1.31rem;
+    margin-bottom: 1.5rem;
+}
+.footer-widget.links-widget li{
+    margin: 0.3rem 0;
+}
+.footer-widget li a:hover{
+    color: var(--color-secondary) !important;
+}
+.footer-widget.contact-widget li a{
+    margin: 1rem 0;
+    display: flex;
+    gap: 0.5rem;
+    align-items: start;
+}
+footer .subs-widget{
+    margin-top: 2rem;
+}
+footer .subs-widget input{
+    background-color: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    border-bottom: 1px solid var(--color-border) !important;
+    padding: .375rem 0 !important;
+    color: var(--color-white) !important;
+}
+footer .subs-widget span{
+    font-size: 0.75rem;
+    color: var(--color-border);
+}
+footer .subs-widget button{
+    padding: 0 !important;
+    border: 0 !important;
+    outline: 0 !important;
+    background: transparent !important;
+    position: absolute;
+    top: 0.1rem;
+    right: 0;
+}
+footer .subs-widget input::placeholder{
+    color: var(--color-border) !important;
+}
+.social-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.95rem;
+}
+.social-list li img{
+    max-width: 34px;
+    height: 30px;
+    object-fit: contain;
 }
 @media (min-width: 992px){
     .category-circle{

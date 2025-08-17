@@ -1,0 +1,83 @@
+[
+    {
+      "id": 1,
+      "name": "Skin Serum",
+      "image": "images/products/product1.png",
+      "mrpPrice": 10.67,
+      "price": 8.47,
+      "rating": 4.2,
+      "tag": "sale",
+      "type": "single"
+    },
+    {
+      "id": 2,
+      "name": "Skin Serum",
+      "image": "images/products/product2.png",
+      "mrpPrice": 15.0,
+      "price": 12.5,
+      "rating": 4.5,
+      "tag": "hot deal",
+      "type": "single"
+    },
+    {
+      "id": 3,
+      "name": "Face Cream",
+      "image": "images/products/product3.png",
+      "mrpPrice": 30.0,
+      "price": 24.5,
+      "rating": 4.6,
+      "tag": "sale",
+      "type": "single"
+    },
+    {
+        "id": 4,
+        "name": "Skin Toner",
+        "image": "images/products/product4.png",
+        "mrpPrice": 30.0,
+        "price": 24.5,
+        "rating": 4.6,
+        "tag": "sale",
+        "type": "single"
+    },
+    {
+        "id": 5,
+        "name": "Skin Serum",
+        "image": "images/products/product5.png",
+        "mrpPrice": 10.67,
+        "price": 8.47,
+        "rating": 4.2,
+        "tag": "sale",
+        "type": "combo"
+      },
+      {
+        "id": 6,
+        "name": "Skin Serum",
+        "image": "images/products/product6.png",
+        "mrpPrice": 15.0,
+        "price": 12.5,
+        "rating": 4.5,
+        "tag": "hot deal",
+        "type": "combo"
+      },
+      {
+        "id": 7,
+        "name": "Face Cream",
+        "image": "images/products/product7.png",
+        "mrpPrice": 30.0,
+        "price": 24.5,
+        "rating": 4.6,
+        "tag": "sale",
+        "type": "combo"
+      },
+      {
+          "id": 8,
+          "name": "Skin Toner",
+          "image": "images/products/product7.png",
+          "mrpPrice": 30.0,
+          "price": 24.5,
+          "rating": 4.6,
+          "tag": "sale",
+          "type": "combo"
+      }  
+  ]
+  
