@@ -313,6 +313,9 @@ ul{
 .product-block .content-box {
     padding: 0.5rem 0 1.3rem;
 }
+.product-block .content-box img{
+    display: inline-block;
+}
 .benefitsArea{
     background: #FFFFEF;
     background: radial-gradient(circle, rgba(255, 255, 239, 1) 0%, rgba(255, 255, 226, 1) 100%);
@@ -482,6 +485,23 @@ footer .subs-widget input::placeholder{
     max-width: 34px;
     height: 30px;
     object-fit: contain;
+}
+.home-products-slider .slick-slide{
+    padding: 0 0.7rem;
+}
+.home-products-slider .slick-dots li button {
+    width: 0.94rem!important;
+    height: 0.94rem!important;
+    border-radius: 50%!important;
+    padding: 0!important;
+    background-color: var(--color-dark)!important;
+}
+.home-products-slider .slick-dots li.slick-active button{
+    transform: scale(1.4);
+    background-color: var(--color-primary)!important;
+}
+.home-products-slider .slick-dots li button:before{
+    display: none !important;
 }
 @media (min-width: 992px){
     .category-circle{

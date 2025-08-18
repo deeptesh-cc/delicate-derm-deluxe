@@ -1,6 +1,10 @@
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 import Button from '../components/Button'
 import SectionTitle from '../components/SectionTitle'
-import ProductsRender from '../components/ProductsRender';
+import ProductSlider, { ProductsRender } from "../components/ProductsRender";
+
+// import ProductsRender from '../components/ProductsRender';
 
 function Home() {
     return(
@@ -162,9 +166,9 @@ function Home() {
                         </div>
                     </div>
                     
-                    <div className="row row-cols-2 row-cols-md-3 row-cols-lg-4">
-                        <ProductsRender filterType="single" />
-                    </div>
+                    
+                        <ProductSlider filterType="single" />
+                    
                 </div>
             </section>
             <section className="sectionGap benefitsArea">
@@ -258,9 +262,7 @@ function Home() {
                         </div>
                     </div>
                     
-                    <div className="row row-cols-2 row-cols-md-3 row-cols-lg-4">
-                        <ProductsRender filterType="combo" />
-                    </div>
+                        <ProductSlider filterType="combo" />
                 </div>
             </section>
             <section className="sectionGap testimonialsArea pb-0">
