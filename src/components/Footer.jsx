@@ -5,8 +5,8 @@ function Footer() {
             <div className="footer-body">
             <div className="container">
                 <div className="row">
-                    <div className="col-xl-6">
-                        <div className="row row-cols-1 row-cols-md-3">
+                    <div className="col-lg-5 col-xl-6">
+                        <div className="row row-cols-1 row-cols-sm-3">
                             <div className="col d-flex">
                                 <div className="feature-block">
                                 <img src="images/icons/shipping.svg" className="img-fluid" alt=""/>
@@ -26,29 +26,32 @@ function Footer() {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-xl-11">
-                            <div className="logo-area">
-                                <img src="images/logo.png" className="img-fluid" alt=""/>
-                                <p className="my-4">Blending nature with science, we create clean, effective products that celebrate every skin type.</p>
-                             </div>
-                             <ul className="social-list">
-                                <li><a href="" target="_blank">
-                                        <img src="images/icons/facebook.svg" alt=""/>
-                                    </a></li>
-                                <li><a href="" target="_blank">
-                                    <img src="images/icons/insta.svg" alt=""/>
-                                    </a></li>
-                                <li><a href="" target="_blank">
-                                    <img src="images/icons/whatsapp.svg" alt=""/>
-                                    </a></li>
-                                <li><a href="" target="_blank">
-                                    <img src="images/icons/youtube.svg" alt=""/>
-                                    </a></li>
-                             </ul>
+                        <div className="row justify-content-center justify-content-lg-start">
+                            <div className="col-xl-11 col-md-8 col-lg-12">
+                                <div className="logo-area">
+                                    <img src="images/logo.png" className="img-fluid logo" alt=""/>
+                                    <p className="my-4">Blending nature with science, we create clean, effective products that celebrate every skin type.</p>
+                                    <ul className="social-list">
+                                    <li><a href="" target="_blank">
+                                            <img src="images/icons/facebook.svg" alt=""/>
+                                        </a></li>
+                                    <li><a href="" target="_blank">
+                                        <img src="images/icons/insta.svg" alt=""/>
+                                        </a></li>
+                                    <li><a href="" target="_blank">
+                                        <img src="images/icons/whatsapp.svg" alt=""/>
+                                        </a></li>
+                                    <li><a href="" target="_blank">
+                                        <img src="images/icons/youtube.svg" alt=""/>
+                                        </a></li>
+                                </ul>
+                                </div>
+                                
+                            </div>
                         </div>
                     </div>
-                    <div className="col-xl-6 px-xl-5">
-                        <div className="row row-cols-1 row-cols-md-3">
+                    <div className="col-lg-7 col-xl-6 px-lg-4 px-xl-5">
+                        <div className="row row-cols-2 row-cols-sm-3">
                             <div className="col">
                             <div className="footer-widget links-widget">
                                 <h3 className="">Quick Links</h3>
@@ -82,7 +85,8 @@ function Footer() {
                             </div>
                             </div>
                         </div>
-                        <div className="col-xl-8">
+                        <div className="row justify-content-center justify-content-lg-start">
+                        <div className="col-xl-8 col-11 col-sm-8 col-md-6 col-lg-8">
                             <div className="footer-widget subs-widget">
                                 <h3>Subscribe To Our Newsletter</h3>
                                 <div className="position-relative">
@@ -92,8 +96,9 @@ function Footer() {
                                 </div>
                                 <button type="submit"><img src="images/icons/paper-plane.svg"/></button>
                                 </div>
-                                <img src="images/icons/payments.svg" alt="" />
+                                <img src="images/icons/payments.svg" alt="" className="pay-icons" />
                             </div>
+                        </div>
                         </div>
                     </div>
                 </div>

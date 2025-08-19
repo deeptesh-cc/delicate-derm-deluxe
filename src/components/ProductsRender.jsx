@@ -1,3 +1,4 @@
+import { useEffect, useMemo, useState } from "react";
 import Slider from "react-slick";
 import ProductCard from "./ProductCard";
 import productsData from "../data/products.json";
@@ -29,30 +30,32 @@ const ProductSlider = ({ filterType }) => {
     ? productsData.filter((p) => p.type === filterType)
     : productsData;
 
+  
+    const [slidesToShow, setSlidesToShow] = useState(4);
 
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    responsive: [
-      {
-        breakpoint: 992,
-        settings: { slidesToShow: 3 }
-      },
-      {
-        breakpoint: 768,
-        settings: { slidesToShow: 3 }
-      },
-      {
-        breakpoint: 320,
-        settings: { slidesToShow: 2 }
-      }
-    ]
-  };
+  
+    useEffect(() => {
+      const updateSlides = () => {
+        if (window.innerWidth < 767) setSlidesToShow(2);
+        else if (window.innerWidth < 992) setSlidesToShow(3);
+        else setSlidesToShow(4);
+      };
+  
+      updateSlides(); // run on mount
+      window.addEventListener("resize", updateSlides);
+      return () => window.removeEventListener("resize", updateSlides);
+    }, []);
+
+
+    const settings = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 2000,
+    };
 
   return (
     <div className="home-products-slider">

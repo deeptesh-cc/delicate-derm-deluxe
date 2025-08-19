@@ -16,10 +16,10 @@ function Header() {
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
                 <li className="nav-item">
-                <a className="nav-link" href="#">Home</a>
+                    <Link className="nav-link" to="/">Home</Link>
                 </li>
                 <li className="nav-item">
-                <a className="nav-link" href="#">Products</a>
+                    <Link className="nav-link" to="/shop">Products</Link>
                 </li>
                 <li className="nav-item"><a className="nav-link" href="">Terms</a> </li>
                 <li className="nav-item"><a className="nav-link" href="">Privacy</a> </li>

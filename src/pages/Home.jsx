@@ -3,8 +3,8 @@ import "slick-carousel/slick/slick-theme.css";
 import Button from '../components/Button'
 import SectionTitle from '../components/SectionTitle'
 import ProductSlider, { ProductsRender } from "../components/ProductsRender";
-
-// import ProductsRender from '../components/ProductsRender';
+import TestimonialSlider from "../components/TestimonialsRender";
+import CategoryBlock, { CategoryBlockRender } from "../components/CategoryBlock";
 
 function Home() {
     return(
@@ -49,7 +49,7 @@ function Home() {
                             title='"Inspired by Nature, Powered by Passion, and Committed to Unveiling Your Most Radiant Self"'
                             alignment="text-start"
                             variant="light"
-                            extraclasses="mb-0"
+                            extraclasses="mb-md-0"
                         />
                         </div>
                         <div className="col-xl-3 col-lg-3 col-md-4 ps-xl-5">
@@ -96,66 +96,12 @@ function Home() {
                         </div>
                         <div className="category-row-wrapper">
                         <div className="row row-cols-2 row-cols-sm-3 row-cols-lg-5 justify-content-center">
-                            <div className="col">
-                                <a href="#" className="category-circle">
-                                    <img src="images/feature-images/cat-feat01.jpg" className="img-fluid" alt="" />
-                                    <div className="overlay-content">
-                                        <div>
-                                        <h4>Skin Care</h4>
-                                        <span>16 Items</span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div className="col">
-                                <a href="#" className="category-circle">
-                                    <img src="images/feature-images/cat-feat02.jpg" className="img-fluid" alt="" />
-                                    <div className="overlay-content">
-                                        <div>
-                                        <h4>Skin Serum</h4>
-                                        <span>16 Items</span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div className="col">
-                                <a href="#" className="category-circle">
-                                    <img src="images/feature-images/cat-feat03.jpg" className="img-fluid" alt="" />
-                                    <div className="overlay-content">
-                                        <div>
-                                        <h4>Skin Toner</h4>
-                                        <span>16 Items</span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div className="col">
-                                <a href="#" className="category-circle">
-                                    <img src="images/feature-images/cat-feat04.jpg" className="img-fluid" alt="" />
-                                    <div className="overlay-content">
-                                        <div>
-                                        <h4>Face Cream</h4>
-                                        <span>16 Items</span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div className="col">
-                                <a href="#" className="category-circle">
-                                    <img src="images/feature-images/cat-feat05.jpg" className="img-fluid" alt="" />
-                                    <div className="overlay-content">
-                                        <div>
-                                        <h4>Night Cream</h4>
-                                        <span>16 Items</span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
+                            <CategoryBlockRender />
                         </div>
                         </div>
                 </div>
             </section>
-            <section className="sectionGap productsArea">
+            <section className="sectionGap productsArea overflow-hidden">
                 <div className="container">
                     <div className="row justify-content-center">
                         <div className="col-xl-6">
@@ -251,7 +197,7 @@ function Home() {
                     </div>
                 </div>
             </section>
-            <section className="sectionGap productsArea">
+            <section className="sectionGap productsArea overflow-hidden">
                 <div className="container">
                     <div className="row justify-content-center">
                         <div className="col-xl-6">
@@ -301,32 +247,18 @@ function Home() {
                     </div>
                     <div className="row justify-content-between align-items-center">
                         <div className="col-xl-6 col-md-6">
-                            <div className="testimonial-block text-center">
-                                <div className="text-center">
-                                <img src="images/icons/Google_G_ico.svg" className="" alt=""/>
-                                <br/>
-                                <img src="images/icons/rating-stars.svg" className="" alt=""/>
-                                </div>
-                                <p className="title">Quality Services</p>
-                                <p className="testim-cont">"The team at our Salon is absolutely amazing! They
-            transformed my hair and gave me a look possible.
-            I always leave feeling most beautiful and confident. Highly recommend!"</p>
-                                <div className="auth-area">
-                                    <h5>Sarah M.</h5>
-                                    <span>Managing Director Of ALB</span>
-                                </div>
-                            </div>
+                            <TestimonialSlider />
                         </div>
                         <div className="col-xl-5 col-md-6 text-center">
-                            <img src="images/feature-images/testimonial-feat.png" className="img-fluid mt-4 mt-xl-5" alt=""/>
+                            <img src="images/feature-images/testimonial-feat.png" className="img-fluid mt-5" alt=""/>
                         </div>
                     </div>
                 </div>
             </section>
             <section className="sectionGap faqsArea">
                 <div className="container">
-                    <div className="row">
-                    <div className="col-xl-7">
+                    <div className="row justify-content-center">
+                    <div className="col-lg-10 col-xl-7">
                             <SectionTitle
                                 title="Redefining Beauty Standards, One Client at a Time"
                                 extraclasses="text-xl-start"
@@ -384,7 +316,7 @@ function Home() {
                             </div>
                         </div>
                     </div>
-                    <div className="col-xl-5">
+                    <div className="d-none d-xl-block col-xl-5">
                         <img src="images/feature-images/faq-feat.jpg" className="img-fluid" alt=""/>
                     </div>
                     </div>

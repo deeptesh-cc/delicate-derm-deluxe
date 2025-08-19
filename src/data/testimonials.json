@@ -1,0 +1,23 @@
+[
+    {
+      "id": 1,
+      "title": "Glow That Feels Natural",
+      "description": "I started using the face cream a few weeks ago, and my skin feels smoother and more refreshed than before. It’s become part of my daily routine.",
+      "author": "Anjali R.",
+      "location": "Mumbai, India"
+    },
+    {
+        "id": 2,
+        "title": "A Gentle Boost",
+        "description": "The skin serum feels light and blends easily. It may not be instant magic, but over time I noticed my skin looking more hydrated.",
+        "author": "Sophie L.",
+        "location": "London, UK"
+    },
+    {
+        "id": 3,
+        "title": "A Comforting Ritual",
+        "description": "The night cream has a calming texture that makes my evening routine relaxing. Waking up, my skin feels softer to the touch.",
+        "author": "Maya K.",
+        "location": "New York, USA"
+    }
+]

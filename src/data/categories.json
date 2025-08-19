@@ -1,0 +1,32 @@
+[
+    {
+      "id": 1,
+      "title": "Skin Care",
+      "img": "images/feature-images/cat-feat01.jpg",
+      "items": 16
+    },
+    {
+        "id": 2,
+        "title": "Skin Serum",
+        "img": "images/feature-images/cat-feat02.jpg",
+        "items": 16
+    },
+    {
+        "id": 3,
+        "title": "Skin Toner",
+        "img": "images/feature-images/cat-feat03.jpg",
+        "items": 16
+    },
+    {
+        "id": 4,
+        "title": "Face Cream",
+        "img": "images/feature-images/cat-feat04.jpg",
+        "items": 16
+    },
+    {
+        "id": 5,
+        "title": "Night Cream",
+        "img": "images/feature-images/cat-feat05.jpg",
+        "items": 16
+    }
+]
