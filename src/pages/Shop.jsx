@@ -1,13 +1,22 @@
-import Header from '../components/Header'
-import Button from '../components/Button'
+import ProductSlider, { ProductsRender } from "../components/ProductsRender";
 
 
 function Shop() {
     return(
-        <>
-            
-            <h2>Shop Page</h2>
-        </>
+        <section className="sectionGap">
+            <div className="container">
+            <div className='row'>
+                <div className='col-lg-3'>
+
+                </div>
+                <div className='col-lg-9'>
+                    <div className="row row-cols-2 row-cols-md-3">
+                        <ProductsRender />
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
     )
 }
 
