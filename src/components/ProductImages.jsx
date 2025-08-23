@@ -33,11 +33,15 @@ function ProductImages() {
     slidesToShow: 4,
     swipeToSlide: true,
     focusOnSelect: true,
+    // vertical: true,      
+    // verticalSwiping: true,
   };
 
   return (
-    <div className="product-slider">
+    <div className="product-details-slider bg-white">
+
       {/* Main Image Slider */}
+      <div className="main-slider pt-4">
       <Slider {...mainSettings} ref={mainSlider}>
         {productImg.map((img, index) => (
           <div key={index}>
@@ -45,15 +49,21 @@ function ProductImages() {
           </div>
         ))}
       </Slider>
+      </div>
 
       {/* Thumbnail Slider */}
-      <Slider {...thumbSettings} ref={thumbSlider}>
-        {productImg.map((img, index) => (
-          <div key={index}>
-            <img src={img} className="img-fluid" alt={`Thumb ${index}`} />
-          </div>
-        ))}
-      </Slider>
+      <div className="thumb-slider py-4">
+        <Slider {...thumbSettings} ref={thumbSlider}>
+          {productImg.map((img, index) => (
+            <div key={index}>
+              <img src={img} className="img-fluid" alt={`Thumb ${index}`} />
+            </div>
+          ))}
+        </Slider>
+      </div>
+
+      
+
     </div>
   )
 }
