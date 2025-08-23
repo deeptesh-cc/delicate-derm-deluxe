@@ -17,7 +17,7 @@ function ProductCard({ name, image, mrpPrice, price, rating, tag }) {
                     <Button to="/shop" variant="solid">
                         Add To Cart
                     </Button>
-                    <Button to="/shop" variant="outline">
+                    <Button to="/product-details" variant="outline">
                         View Product
                     </Button>
             </div>

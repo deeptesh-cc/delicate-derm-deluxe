@@ -80,6 +80,23 @@ body{
     width: 100%;
     z-index: 99;
 }
+label{
+    font-size: 1rem !important;
+}
+.form-check-input{
+    width: 1.11em !important;
+    height: 1.11em !important;
+    margin-top: 0.15em !important;
+}
+.form-check-input:checked{
+    background-color: var(--color-secondary) !important;
+    border-color: var(--color-secondary) !important;
+}
+.form-select{
+    font-size: 0.9rem;
+    color: var(--color-text);
+    padding: 0.575rem 2.25rem 0.575rem 1.05rem;
+}
 .navbar{
     border-bottom: 1px solid var(--color-border);
 }
@@ -557,6 +574,32 @@ footer .subs-widget input::placeholder{
 }
 .subs-widget .pay-icons{
     max-width: 14rem;
+}
+.rangeWrap > div > div:last-child{
+    position: relative;
+    bottom: 1.03rem
+}
+.range-display{
+    width: fit-content;
+    border: 1px solid var(--color-border);
+    border-radius: 0.44rem;
+    padding: 0.63rem 0.94rem;
+    margin-top: 1.5rem;
+    font-size: 1rem
+}
+.sidebar-widget{
+    margin-bottom: 2.81rem;
+}
+.sidebar-widget .widget-title{
+    font-family: var(--font-title);
+    font-size: 1.31rem;
+    margin-bottom: 1.38rem;
+}
+#productSearch{
+    padding: 0.52rem 1.05rem;
+    background-color: var(--color-white);
+    border-color: var(--color-border);
+    font-size: 0.9rem;
 }
 @media (min-width: 992px){
     .category-circle{
