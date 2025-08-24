@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from "react";
 import Slider from "react-slick";
 
-function ProductImages() {
+function ProductImages({product}) {
     const mainSlider = useRef(null);
     const thumbSlider = useRef(null);
   
@@ -14,11 +14,11 @@ function ProductImages() {
     setNavThumb(thumbSlider.current);
   }, []);
 
-  const productImg = [
-    "images/products/product2.png",
-    "images/products/product3.png",
-    "images/products/product4.png",
-  ];
+  // const productImg = [
+  //   "images/products/product2.png",
+  //   "images/products/product3.png",
+  //   "images/products/product4.png",
+  // ];
 
   const mainSettings = {
     asNavFor:  navThumb,
@@ -43,7 +43,7 @@ function ProductImages() {
       {/* Main Image Slider */}
       <div className="main-slider pt-4">
       <Slider {...mainSettings} ref={mainSlider}>
-        {productImg.map((img, index) => (
+        {product.image.map((img, index) => (
           <div key={index}>
             <img src={img} className="img-fluid" alt={`Product ${index}`} />
           </div>
@@ -54,7 +54,7 @@ function ProductImages() {
       {/* Thumbnail Slider */}
       <div className="thumb-slider py-4">
         <Slider {...thumbSettings} ref={thumbSlider}>
-          {productImg.map((img, index) => (
+          {product.image.map((img, index) => (
             <div key={index}>
               <img src={img} className="img-fluid" alt={`Thumb ${index}`} />
             </div>

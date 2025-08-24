@@ -2,7 +2,11 @@
     {
       "id": 1,
       "name": "Skin Serum",
-      "image": "images/products/product1.png",
+      "image": [
+        "/images/products/product1.png",
+        "/images/products/ing1.jpg"
+      ],
+      "description": "Our Anti-Ageing Skin Serum is packed with powerful antioxidants, hyaluronic acid, and botanical extracts that reduce fine lines, boost elasticity, and restore youthful radiance. Lightweight, fast-absorbing, and perfect for daily use—because glowing, firm skin starts now.",
       "mrpPrice": 10.67,
       "price": 8.47,
       "rating": 4.2,
@@ -12,7 +16,11 @@
     {
       "id": 2,
       "name": "Skin Serum",
-      "image": "images/products/product2.png",
+      "image": [
+        "/images/products/product2.png",
+        "/images/products/ing1.jpg"
+      ],
+      "description": "Our Anti-Ageing Skin Serum is packed with powerful antioxidants, hyaluronic acid, and botanical extracts that reduce fine lines, boost elasticity, and restore youthful radiance. Lightweight, fast-absorbing, and perfect for daily use—because glowing, firm skin starts now.",
       "mrpPrice": 15.0,
       "price": 12.5,
       "rating": 4.5,
@@ -22,7 +30,11 @@
     {
       "id": 3,
       "name": "Face Cream",
-      "image": "images/products/product3.png",
+      "image": [
+        "/images/products/product3.png",
+        "/images/products/ing2.jpg"
+      ],
+      "description": "Our Anti-Ageing Skin Serum is packed with powerful antioxidants, hyaluronic acid, and botanical extracts that reduce fine lines, boost elasticity, and restore youthful radiance. Lightweight, fast-absorbing, and perfect for daily use—because glowing, firm skin starts now.",
       "mrpPrice": 30.0,
       "price": 24.5,
       "rating": 4.6,
@@ -32,7 +44,11 @@
     {
         "id": 4,
         "name": "Skin Toner",
-        "image": "images/products/product4.png",
+        "image": [
+          "/images/products/product4.png",
+          "/images/products/ing3.jpg"
+        ],
+        "description": "Our Anti-Ageing Skin Serum is packed with powerful antioxidants, hyaluronic acid, and botanical extracts that reduce fine lines, boost elasticity, and restore youthful radiance. Lightweight, fast-absorbing, and perfect for daily use—because glowing, firm skin starts now.",
         "mrpPrice": 30.0,
         "price": 24.5,
         "rating": 4.6,
@@ -42,7 +58,11 @@
     {
         "id": 5,
         "name": "Skin Serum",
-        "image": "images/products/product5.png",
+        "image": [
+          "/images/products/product5.png",
+          "/images/products/ing1.jpg"
+        ],
+        "description": "Our Anti-Ageing Skin Serum is packed with powerful antioxidants, hyaluronic acid, and botanical extracts that reduce fine lines, boost elasticity, and restore youthful radiance. Lightweight, fast-absorbing, and perfect for daily use—because glowing, firm skin starts now.",
         "mrpPrice": 10.67,
         "price": 8.47,
         "rating": 4.2,
@@ -52,7 +72,11 @@
       {
         "id": 6,
         "name": "Skin Serum",
-        "image": "images/products/product6.png",
+        "image": [
+          "/images/products/product6.png",
+          "/images/products/ing1.jpg"
+        ],
+        "description": "Our Anti-Ageing Skin Serum is packed with powerful antioxidants, hyaluronic acid, and botanical extracts that reduce fine lines, boost elasticity, and restore youthful radiance. Lightweight, fast-absorbing, and perfect for daily use—because glowing, firm skin starts now.",
         "mrpPrice": 15.0,
         "price": 12.5,
         "rating": 4.5,
@@ -62,7 +86,11 @@
       {
         "id": 7,
         "name": "Face Cream",
-        "image": "images/products/product7.png",
+        "image": [
+          "/images/products/product7.png",
+          "/images/products/ing2.jpg"
+        ],
+        "description": "Our Anti-Ageing Skin Serum is packed with powerful antioxidants, hyaluronic acid, and botanical extracts that reduce fine lines, boost elasticity, and restore youthful radiance. Lightweight, fast-absorbing, and perfect for daily use—because glowing, firm skin starts now.",
         "mrpPrice": 30.0,
         "price": 24.5,
         "rating": 4.6,
@@ -72,7 +100,11 @@
       {
           "id": 8,
           "name": "Skin Toner",
-          "image": "images/products/product7.png",
+          "image": [
+            "/images/products/product8.png",
+            "/images/products/ing3.jpg"
+          ],
+          "description": "Our Anti-Ageing Skin Serum is packed with powerful antioxidants, hyaluronic acid, and botanical extracts that reduce fine lines, boost elasticity, and restore youthful radiance. Lightweight, fast-absorbing, and perfect for daily use—because glowing, firm skin starts now.",
           "mrpPrice": 30.0,
           "price": 24.5,
           "rating": 4.6,

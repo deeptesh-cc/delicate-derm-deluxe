@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Button from '../components/Button'
 
-function ProductDescription() {
+function ProductDescription({product}) {
 
     const [quantity, setQuantity] = useState(1);
 
@@ -15,19 +15,19 @@ function ProductDescription() {
 
     return(
         <div className="productDescArea">
-            <p className="title">Anti Ageing Skin Serum</p>
+            <p className="title">{product.name}</p>
             <div>
-                <img alt="rating" src="images/icons/rating-stars.svg" style={{width: "7rem"}}/> 
-                <span style={{fontSize: "1rem"}}> (4.2)</span>
+                <img alt="rating" src="/images/icons/rating-stars.svg" style={{width: "7rem"}}/> 
+                <span style={{fontSize: "1rem"}}> ({product.rating})</span>
             </div>
-            <p className="price"><del>$10.67</del> <span style={{color: "var(--color-dark)"}}>$8.47</span></p>
-            <p>Our Anti-Ageing Skin Serum is packed with powerful antioxidants, hyaluronic acid, and botanical extracts that reduce fine lines, boost elasticity, and restore youthful radiance. Lightweight, fast-absorbing, and perfect for daily use—because glowing, firm skin starts now.</p>
+            <p className="price"><del>${product.mrpPrice.toFixed(2)}</del> <span style={{color: "var(--color-dark)"}}>${product.price.toFixed(2)}</span></p>
+            <p>{product.description}</p>
             <p className="stockAvl" style={{color: "var(--color-dark)"}}>Availability: 
             <span style={{color: "var(--color-secondary)"}}>In stock</span></p>
             <div className="d-flex gap-3">
-                <div className="input-group" style={{maxWidth: "8rem"}}>
+                <div className="input-group" style={{maxWidth: "7.5rem"}}>
                     <button
-                        className="btn btn-outline-secondary"
+                        className="btn bg-white border"
                         type="button"
                         onClick={handleDecrement}
                     >
@@ -39,16 +39,17 @@ function ProductDescription() {
                         value={quantity}
                         min="1"
                         max="10"
+                        readOnly
                         onChange={(e) => setQuantity(Number(e.target.value) || 1)}
                     />
                     <button
-                        className="btn btn-outline-secondary"
+                        className="btn bg-white border"
                         type="button"
                         onClick={handleIncrement}
                      > +
                     </button>
                 </div>
-                    <Button onClick="" variant="solid">
+                    <Button onClick={""} variant="solid">
                         Add To Cart
                     </Button>
             </div>
@@ -57,7 +58,7 @@ function ProductDescription() {
                 <div className='col'>
                     <div className='mb-3 feature-box d-flex align-items-center'>
                         <div className='icon bg-white'>
-                            <img className="img-fluid" alt="" src="images/icons/shipping.svg"/>
+                            <img className="img-fluid" alt="" src="/images/icons/shipping.svg"/>
                         </div>
                         <p>Free Shipping Worldwide</p>
                     </div>
@@ -65,7 +66,7 @@ function ProductDescription() {
                 <div className='col'>
                     <div className='mb-3 feature-box d-flex align-items-center'>
                         <div className='icon bg-white'>
-                            <img className="img-fluid" alt="" src="images/icons/return.svg"/>
+                            <img className="img-fluid" alt="" src="/images/icons/return.svg"/>
                         </div>
                         <p>Free Returns Upto 30 Days</p>
                     </div>
@@ -73,7 +74,7 @@ function ProductDescription() {
                 <div className='col'>
                     <div className='mb-3 feature-box d-flex align-items-center'>
                         <div className='icon bg-white'>
-                            <img className="img-fluid" alt="" src="images/icons/money.svg"/>
+                            <img className="img-fluid" alt="" src="/images/icons/money.svg"/>
                         </div>
                         <p>Money Back Guarantee</p>
                     </div>

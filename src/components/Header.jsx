@@ -8,7 +8,7 @@ function Header() {
             <nav className="navbar navbar-expand-lg navbar-light">
         <div className="container">
             <a className="navbar-brand" href="/">
-                <img src="images/logo.png" className="img-fluid"/>
+                <img src="/images/logo.png" className="img-fluid"/>
             </a>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
@@ -29,14 +29,14 @@ function Header() {
             <div className="d-flex header-icons-area">
                 <ul>
                 <li><a href="">
-                    <img src="images/icons/user.svg" alt=""/>
+                    <img src="/images/icons/user.svg" alt=""/>
                 </a></li>
-                <li><a href="">
-                    <img src="images/icons/cart.svg" alt=""/>
+                <li><Link to="/cart">
+                    <img src="/images/icons/cart.svg" alt=""/>
                     <span className="count">2</span>
-                </a></li>
+                </Link></li>
                 <li><a href="">
-                    <img src="images/icons/wishlist.svg" alt=""/>
+                    <img src="/images/icons/wishlist.svg" alt=""/>
                     <span className="count">2</span>
                 </a></li>
                 </ul>
