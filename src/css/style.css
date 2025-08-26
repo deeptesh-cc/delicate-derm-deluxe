@@ -85,6 +85,21 @@ body{
 }
 label{
     font-size: 1rem !important;
+    font-weight: 500;
+    color: var(--color-dark);
+}
+label.required::after {
+    content: "*";
+    color: var(--color-secondary);
+}
+button{
+    background-color: transparent;
+    outline: 0;
+    border: 0;
+}
+.form-control, .form-select{
+    padding: 0.525rem .75rem !important;
+    border-color: var(--color-border) !important;
 }
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
@@ -676,10 +691,70 @@ footer .subs-widget input::placeholder{
     letter-spacing: 0.2rem;
     margin: 0;
 }
-.cart-summary-area{
+.cart-summary-area, .checkout-summary{
     background-color: var(--color-white);
     padding: 1.9rem;
     border-radius: 0.63rem;
+}
+.cart-summary-area .cart_item {
+    border-radius: 0.53rem;
+    border: 1px solid var(--color-border);
+    position: relative;
+    margin-bottom: 1.563rem;
+}
+.cart-summary-area .product-name{
+    margin-bottom: 0;
+    font-size: 1.31rem;
+    font-family: var(--font-title);
+}
+.removeFromCart{
+    background-color: var(--color-white);
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    right: 1rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.checkout-widget{
+    padding: 1.3rem 2rem;
+    border-radius: 0.43rem;
+    border: 1px solid var(--color-border);
+}
+.checkout-widget .title{
+    font-size: 2rem;
+    font-family: var(--font-title);
+}
+#checkout-items .product-thumbnail {
+    flex: 0 0 4.375rem;
+    height: 4.375rem;
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: 0.43rem;
+    margin-right: 0.938rem;
+    padding: 0.438rem 0;
+    text-align: center;
+}
+#checkout-items .product-thumbnail img {
+    height: 100%;
+    object-fit: contain;
+}
+#checkout-items .product-name, #checkout-items .product-name span {
+    font-size: 1rem;
+    line-height: 1.7;
+    font-weight: 500;
+}
+#check-cart-foot ul>ul {
+    padding: 0.938rem 0 !important;
+    margin-top: 1.875rem!important;
+    font-weight: 500;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+}
+#check-cart-foot>ul>li {
+    margin: 17px 0;
+    font-size: 23px;
 }
 @media (min-width: 992px){
     .category-circle{

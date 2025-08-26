@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Shop from "./pages/Shop";
+import CheckoutPage from "./pages/CheckoutPage";
 import ProductDetails from "./pages/ProductDetails";
 import CartPage from "./pages/CartPage";
 
@@ -26,6 +27,7 @@ function App() {
             <Route path="/shop" element={<Shop />} />
             <Route path="/product-details/:id" element={<ProductDetails />} />
             <Route path="/cart" element={<CartPage />} />
+            <Route path="/checkout" element={<CheckoutPage />} />
           </Routes>
       <Footer/>
     </div>

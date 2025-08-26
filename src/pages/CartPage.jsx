@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom"
 import BreadcrumbBanner from "../components/BreadcrumbBanner"
 import Button from "../components/Button"
+import CartProduct from "../components/CartProduct"
 
 function CartPage() {
     return(
@@ -11,7 +11,9 @@ function CartPage() {
             <section className="sectionGap">
                 <div className="container">
                     <div className="row">
-                        <div className="col-xl-7"></div>
+                        <div className="col-xl-7">
+                            <CartProduct />
+                        </div>
                         <div className="col-xl-4 offset-lg-1">
                         <div className="cart-summary-area">
                             <h2 className="mb-4">Cart Summery</h2>
@@ -43,9 +45,9 @@ function CartPage() {
                                     </div>
                                 </li>
                             </ul>
-                            <div class="text-center pb-3 w-100">
+                            <div className="text-center pb-3 w-100">
                                 <span className="pe-2">100% Secure</span>
-                                <img alt="" class="img-fluid" src="images/icons/payments.svg" width="180"/>
+                                <img alt="" className="img-fluid" src="images/icons/payments.svg" width="180"/>
 
                             </div>
                             <div className="btns-area mb-4">
