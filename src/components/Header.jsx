@@ -23,7 +23,7 @@ function Header() {
                 </li>
                 <li className="nav-item"><a className="nav-link" href="">Terms</a> </li>
                 <li className="nav-item"><a className="nav-link" href="">Privacy</a> </li>
-                <li className="nav-item"><a className="nav-link" href="#">Contact us</a> </li>
+                <li className="nav-item"><Link className="nav-link" to="/contact">Contact us</Link> </li>
             </ul>
             </div>
             <div className="d-flex header-icons-area">

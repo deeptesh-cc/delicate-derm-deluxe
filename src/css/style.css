@@ -65,6 +65,12 @@ body{
     color: var(--color-white)!important;
     border-color: transparent!important;
 }
+.text-dark{
+    color: var(--color-dark) !important;
+}
+.text-body{
+    color: var(--color-text) !important;
+}
 .section-title{
     margin-bottom: 3rem;
 }
@@ -696,13 +702,13 @@ footer .subs-widget input::placeholder{
     padding: 1.9rem;
     border-radius: 0.63rem;
 }
-.cart-summary-area .cart_item {
+.cart_item {
     border-radius: 0.53rem;
     border: 1px solid var(--color-border);
     position: relative;
     margin-bottom: 1.563rem;
 }
-.cart-summary-area .product-name{
+.product-name{
     margin-bottom: 0;
     font-size: 1.31rem;
     font-family: var(--font-title);
