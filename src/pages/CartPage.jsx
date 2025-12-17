@@ -1,8 +1,13 @@
+import { useContext } from "react";
+import { CartContext } from "../context/CartContext";
 import BreadcrumbBanner from "../components/BreadcrumbBanner"
 import Button from "../components/Button"
 import CartProduct from "../components/CartProduct"
 
 function CartPage() {
+
+    const { cart } = useContext(CartContext);
+
     return(
         <>
             <BreadcrumbBanner 
@@ -23,7 +28,11 @@ function CartPage() {
                                         Cart Subtotal
                                     </div>
                                     <div>
-                                    <strong>$<span id="cart-sub-total">15.00</span></strong>
+                                    <strong>
+                                        $<span id="cart-sub-total">
+                                        { cart.reduce((sum, item) => sum + item.price * item.quantity, 0).toFixed(2)}
+                                        </span>
+                                    </strong>
                                     </div>
                                 </li>
                                 <li className="d-flex justify-content-between flex-wrap mb-2">
@@ -41,7 +50,11 @@ function CartPage() {
                                         <strong>Order Total</strong>
                                     </div>
                                     <div>
-                                    <strong>$<span id="cart-total2">15</span></strong>
+                                    <strong>
+                                        $<span id="cart-total2">
+                                        { cart.reduce((sum, item) => sum + item.price * item.quantity, 0).toFixed(2)}
+                                        </span>
+                                    </strong>
                                     </div>
                                 </li>
                             </ul>

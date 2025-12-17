@@ -16,7 +16,7 @@ function ProductsRender({ filterType }) {
     return (
      <>
         {filteredProducts.map((product) => (
-          <ProductCard key={product.id} {...product} />
+          <ProductCard key={product.id} product={product} />
         ))}
     </>
     );
@@ -61,7 +61,7 @@ const ProductSlider = ({ filterType }) => {
     <div className="home-products-slider">
       <Slider {...settings}>
         {filteredProducts.map((product) => (
-            <ProductCard key={product.id} {...product} />
+            <ProductCard key={product.id} product={product} />
         ))}
       </Slider>
     </div>

@@ -1,6 +1,13 @@
+import { useContext } from "react";
+import { CartContext } from "../context/CartContext";
 import Button from "./Button";
 
-function ProductCard({ id, name, image, mrpPrice, price, rating, tag }) {
+function ProductCard({ product }) {
+
+  const { cart, addToCart } = useContext(CartContext);
+
+  const isInCart = cart.some(item => item.id === product.id);
+
   return (
     <div className="col">
       <div className="product-block">
@@ -8,31 +15,36 @@ function ProductCard({ id, name, image, mrpPrice, price, rating, tag }) {
           <div className="image-box position-relative">
             
             <div className="d-flex justify-content-between align-items-center"> 
-                            <span className="sale-badge">{tag}</span>
+                            <span className="sale-badge">{product.tag}</span>
                               <a href="#">
                                 <img src="/images/icons/wishlist-02.svg" alt=""/>
                               </a>
                           </div>
             <div className="overlay-btns">
-                    <Button to="/shop" variant="solid">
+                {
+                    isInCart ? ( <Button to="/cart" variant="solid">
+                        View In Cart
+                    </Button> ) : (<Button variant="solid" onClick={() => addToCart(product)}>
                         Add To Cart
-                    </Button>
-                    <Button to={`/product-details/${id}`} variant="outline">
+                    </Button>)
+                }
+                   
+                    <Button to={`/product-details/${product.id}`} variant="outline">
                         View Product
                     </Button>
             </div>
 
-            <img src={image[0]} className="img-fluid" alt={name} />
+            <img src={product.image[0]} className="img-fluid" alt={product.name} />
           </div>
 
           <div className="content-box text-center">
-            <h3>{name}</h3>
+            <h3>{product.name}</h3>
             <div>
               <img src="/images/icons/rating-stars.svg" alt="rating" />{" "}
-              <span>({rating})</span>
+              <span>({product.rating})</span>
             </div>
             <p className="mb-0">
-              {mrpPrice && <del>${mrpPrice.toFixed(2)}</del>} ${price.toFixed(2)}
+              {product.mrpPrice && <del>${product.mrpPrice.toFixed(2)}</del>} ${product.price.toFixed(2)}
             </p>
           </div>
         </div>

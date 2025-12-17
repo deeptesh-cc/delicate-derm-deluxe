@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import { CartProvider } from "./context/CartContext";
 import Header from "./components/Header";  
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -22,7 +23,8 @@ function App() {
   const pageClass = firstSegment === "" ? "home" : firstSegment;
   
   return (
-    <div className={`app ${pageClass}`}>
+    <CartProvider>
+    <div className={`app ${pageClass}`}> 
       <Header/>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -35,6 +37,7 @@ function App() {
           </Routes>
       <Footer/>
     </div>
+    </CartProvider>
   )
 }
 
