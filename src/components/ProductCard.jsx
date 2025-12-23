@@ -4,9 +4,10 @@ import Button from "./Button";
 
 function ProductCard({ product }) {
 
-  const { cart, addToCart } = useContext(CartContext);
+  const { cart, addToCart, toggleWishlist, isInWishlist } = useContext(CartContext);
 
   const isInCart = cart.some(item => item.id === product.id);
+  const liked = isInWishlist(product.id);
 
   return (
     <div className="col">
@@ -16,9 +17,14 @@ function ProductCard({ product }) {
             
             <div className="d-flex justify-content-between align-items-center"> 
                             <span className="sale-badge">{product.tag}</span>
-                              <a href="#">
-                                <img src="/images/icons/wishlist-02.svg" alt=""/>
-                              </a>
+                            <button
+                              onClick={() => toggleWishlist(product)}
+                              style={{ background: "none", border: "none" }}
+                            >
+                              {liked ? (<img src="/images/icons/wishlisted.svg" alt=""/>) : 
+                                       (<img src="/images/icons/wishlist-02.svg" alt=""/>)}
+                            </button>
+
                           </div>
             <div className="overlay-btns">
                 {

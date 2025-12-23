@@ -10,6 +10,7 @@ import ProductDetails from "./pages/ProductDetails";
 import CartPage from "./pages/CartPage";
 import ContactUs from "./pages/ContactUs";
 import ThankYou from "./pages/ThankYou";
+import Wishlist from "./pages/Wishlist";
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
             <Route path="/checkout" element={<CheckoutPage />} />
             <Route path="/contact" element={<ContactUs />} />
             <Route path="/thank-you" element={<ThankYou />} />
+            <Route path="/wishlist" element={<Wishlist />} />
           </Routes>
       <Footer/>
     </div>

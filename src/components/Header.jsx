@@ -4,7 +4,7 @@ import { CartContext } from "../context/CartContext";
 
 function Header() {
 
-    const { cart } = useContext(CartContext);
+    const { cart, wishlist } = useContext(CartContext);
 
     return (
       <>
@@ -39,10 +39,10 @@ function Header() {
                     <img src="/images/icons/cart.svg" alt=""/>
                     <span className="count">{cart.length}</span>
                 </Link></li>
-                <li><a href="">
+                <li><Link to="/wishlist">
                     <img src="/images/icons/wishlist.svg" alt=""/>
-                    <span className="count">2</span>
-                </a></li>
+                    <span className="count">{wishlist.length}</span>
+                </Link></li>
                 </ul>
             </div>
         </div>

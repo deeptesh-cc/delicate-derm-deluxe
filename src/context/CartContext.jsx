@@ -61,8 +61,63 @@ export const CartProvider = ({ children }) => {
     );
   };
 
+
+  /* ---------------- WISHLIST ---------------- */
+
+  const [wishlist, setWishlist] = useState(() => {
+    const storedWishlist = localStorage.getItem("wishlist");
+    return storedWishlist ? JSON.parse(storedWishlist) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem("wishlist", JSON.stringify(wishlist));
+  }, [wishlist]);
+
+  const toggleWishlist = (product) => {
+    setWishlist(prev => {
+      const exists = prev.some(item => item.id === product.id);
+      if (exists) {
+        return prev.filter(item => item.id !== product.id);
+      }
+      return [...prev, product];
+    });
+  };
+
+  // Remove from wishlist
+  const removeFromWishlist = (id) => {
+    setWishlist((prev) => prev.filter(item => item.id !== id));
+  };
+
+  const isInWishlist = (id) => {
+    return wishlist.some(item => item.id === id);
+  };
+
+  const moveToCart = (product) => {
+    // Add product to cart
+    addToCart(product);
+  
+    // Remove product from wishlist
+    setWishlist((prev) =>
+      prev.filter((item) => item.id !== product.id)
+    );
+  };
+  
+
   return (
-    <CartContext.Provider value={{ cart, addToCart, removeFromCart, incrementQty, decrementQty }}>
+    <CartContext.Provider
+      value={{
+        cart,
+        addToCart,
+        removeFromCart,
+        incrementQty,
+        decrementQty,
+        wishlist,
+        toggleWishlist,
+        isInWishlist,
+        removeFromWishlist,
+        moveToCart
+      }}
+    >
       {children}
     </CartContext.Provider>
   );
