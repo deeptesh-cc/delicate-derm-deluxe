@@ -11,6 +11,7 @@
       "price": 8.47,
       "rating": 4.2,
       "tag": "sale",
+      "categories": ["skin-serum"],
       "type": "single"
     },
     {
@@ -25,6 +26,7 @@
       "price": 12.5,
       "rating": 4.5,
       "tag": "hot deal",
+      "categories": ["skin-serum"],
       "type": "single"
     },
     {
@@ -39,6 +41,7 @@
       "price": 24.5,
       "rating": 4.6,
       "tag": "sale",
+      "categories": ["face-cream"],
       "type": "single"
     },
     {
@@ -49,10 +52,11 @@
           "/images/products/ing3.jpg"
         ],
         "description": "Our Anti-Ageing Skin Serum is packed with powerful antioxidants, hyaluronic acid, and botanical extracts that reduce fine lines, boost elasticity, and restore youthful radiance. Lightweight, fast-absorbing, and perfect for daily use—because glowing, firm skin starts now.",
-        "mrpPrice": 30.0,
-        "price": 24.5,
+        "mrpPrice": 27.0,
+        "price": 20.5,
         "rating": 4.6,
         "tag": "sale",
+        "categories": ["skin-toner"],
         "type": "single"
     },
     {
@@ -67,6 +71,7 @@
         "price": 8.47,
         "rating": 4.2,
         "tag": "sale",
+        "categories": ["skin-serum"],
         "type": "combo"
       },
       {
@@ -81,6 +86,7 @@
         "price": 12.5,
         "rating": 4.5,
         "tag": "hot deal",
+        "categories": ["skin-serum"],
         "type": "combo"
       },
       {
@@ -95,6 +101,7 @@
         "price": 24.5,
         "rating": 4.6,
         "tag": "sale",
+        "categories": ["face-cream"],
         "type": "combo"
       },
       {
@@ -109,6 +116,7 @@
           "price": 24.5,
           "rating": 4.6,
           "tag": "sale",
+          "categories": ["skin-toner"],
           "type": "combo"
       }  
   ]

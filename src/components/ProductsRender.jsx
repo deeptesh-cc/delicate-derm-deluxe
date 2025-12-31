@@ -5,17 +5,17 @@ import productsData from "../data/products.json";
 
 
 function ProductsRender({ filterType }) {
-    // const filteredProducts = productsData.filter(
+    // const filterByType = productsData.filter(
     //   (product) => product.type === filterType
     // );
   
-    const filteredProducts = filterType
+    const filterByType = filterType
     ? productsData.filter((product) => product.type === filterType)
     : productsData;
     
     return (
      <>
-        {filteredProducts.map((product) => (
+        {filterByType.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
     </>
@@ -26,7 +26,7 @@ function ProductsRender({ filterType }) {
 
 const ProductSlider = ({ filterType }) => {
 
-  const filteredProducts = filterType
+  const filterByType = filterType
     ? productsData.filter((p) => p.type === filterType)
     : productsData;
 
@@ -60,7 +60,7 @@ const ProductSlider = ({ filterType }) => {
   return (
     <div className="home-products-slider">
       <Slider {...settings}>
-        {filteredProducts.map((product) => (
+        {filterByType.map((product) => (
             <ProductCard key={product.id} product={product} />
         ))}
       </Slider>
