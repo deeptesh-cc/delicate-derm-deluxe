@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState, useMemo } from "react";
+import { useSearchParams } from "react-router-dom";
 import productsData from "../data/products.json"
 
 export const CartContext = createContext();
@@ -153,6 +154,86 @@ export const CartProvider = ({ children }) => {
     );
   };
 
+
+     /* ---------------- PAGINATION ---------------- */
+
+     const PRODUCTS_PER_PAGE = 6;
+
+     const [currentPage, setCurrentPage] = useState(1);
+ 
+     const totalPages = Math.ceil(
+         filteredProducts.length / PRODUCTS_PER_PAGE
+       );
+       
+       const startIndex = (currentPage - 1) * PRODUCTS_PER_PAGE;
+       const endIndex = startIndex + PRODUCTS_PER_PAGE;
+       
+       const paginatedProducts = filteredProducts.slice(
+         startIndex,
+         endIndex
+       );
+ 
+       useEffect(() => {
+         setCurrentPage(1);
+       }, [searchTerm, selectedTypes, selectedCategories, priceRange]);
+
+
+  /* ---------------- URL BASED FILTER WITH PAGINATION ---------------- */
+
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  
+  useEffect(() => {
+    const search = searchParams.get("search") || "";
+    const type = searchParams.get("type");
+    const category = searchParams.get("category");
+    const min = searchParams.get("min");
+    const max = searchParams.get("max");
+    const page = Number(searchParams.get("page")) || 1;
+
+    setCurrentPage(page);
+  
+    setSearchTerm(search);
+  
+    if (type) setSelectedTypes(type.split(","));
+    if (category) setSelectedCategories(category.split(","));
+  
+    if (min && max) {
+      setPriceRange([Number(min), Number(max)]);
+    }
+  }, []);
+
+  useEffect(() => {
+    const params = {};
+
+    const MIN_PRICE = 0;
+    const MAX_PRICE = 100;
+  
+    if (searchTerm.trim()) {
+      params.search = searchTerm;
+    }
+
+    if (selectedTypes.length > 0) {
+      params.type = selectedTypes.join(",");
+    }
+  
+    if (selectedCategories.length > 0) {
+      params.category = selectedCategories.join(",");
+    }
+  
+    if (priceRange[0] !== MIN_PRICE || priceRange[1] !== MAX_PRICE) {
+      params.min = priceRange[0];
+      params.max = priceRange[1];
+    }
+
+    if (currentPage > 1) {
+      params.page = currentPage;
+    }
+  
+    setSearchParams(params);
+  }, [searchTerm, selectedTypes, selectedCategories, priceRange, currentPage]);
+
+
   return (
     <CartContext.Provider
       value={{
@@ -176,6 +257,10 @@ export const CartProvider = ({ children }) => {
         priceRange,
         setPriceRange,
         filteredProducts,
+        currentPage,
+        setCurrentPage,
+        totalPages,
+        paginatedProducts
       }}
     >
       {children}

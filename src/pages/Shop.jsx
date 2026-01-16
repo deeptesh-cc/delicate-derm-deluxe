@@ -8,8 +8,7 @@ import productsData from "../data/products.json";
 
 function Shop() {
 
-    
-    const { filteredProducts } = useContext(CartContext);
+    const { filteredProducts, currentPage, setCurrentPage, totalPages, paginatedProducts } = useContext(CartContext);
 
     return(
         <>
@@ -40,16 +39,63 @@ function Shop() {
                             </div>
                         </div>
                         
-                            {filteredProducts.length === 0 ? (
+                            {paginatedProducts.length === 0 ? (
                                 <p className="text-center">No products found</p>
                                 ) : (
                                 <div className="row row-cols-2 row-cols-md-3">
-                                    {filteredProducts.map((product) => (
+                                    {paginatedProducts.map((product) => (
                                         <ProductCard key={product.id} product={product} />
                                     ))}
                                 </div>
                                 )
                             }
+
+
+                            {totalPages > 1 && (
+                            <nav className="mt-4">
+                                <ul className="pagination justify-content-center">
+
+                                
+                                <li className={`page-item ${currentPage === 1 ? "opacity-50 pe-none" : ""}`}>
+                                    <button
+                                    className="page-link"
+                                    onClick={() => setCurrentPage(p => p - 1)}
+                                    >
+                                    <img src="images/icons/page-arrow-prev.svg" alt="..."/>
+                                    </button>
+                                </li>
+
+                                
+                                {[...Array(totalPages)].map((_, index) => {
+                                    const page = index + 1;
+                                    return (
+                                    <li
+                                        key={page}
+                                        className={`page-item ${currentPage === page ? "active" : ""}`}
+                                    >
+                                        <button
+                                        className="page-link"
+                                        onClick={() => setCurrentPage(page)}
+                                        >
+                                        {page}
+                                        </button>
+                                    </li>
+                                    );
+                                })}
+
+                                
+                                <li className={`page-item ${currentPage === totalPages ? "opacity-50 pe-none" : ""}`}>
+                                    <button
+                                    className="page-link"
+                                    onClick={() => setCurrentPage(p => p + 1)}
+                                    >
+                                    <img src="images/icons/page-arrow-next.svg" alt="..."/>
+                                    </button>
+                                </li>
+
+                                </ul>
+                            </nav>
+                            )}
                         
                     </div>
                 </div>

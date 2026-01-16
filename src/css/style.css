@@ -162,6 +162,20 @@ ul{
     margin: 0 !important;
     list-style: none;
 }
+.page-link {
+    font-size: 1.313rem !important;
+    font-weight: 600;
+    color: var(--color-dark) !important;
+    padding: 0 !important;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    border-color: transparent !important;
+}
+.active>.page-link, .page-link.active{
+    background-color: var(--color-dark) !important;
+    color: var(--color-white) !important;
+}
 .header-icons-area ul{
     display: flex;
     gap: 1.22rem;
