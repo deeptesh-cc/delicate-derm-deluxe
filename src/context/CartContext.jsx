@@ -64,6 +64,22 @@ export const CartProvider = ({ children }) => {
   };
 
 
+const clearCart = () => {
+  setCart([]);
+  localStorage.removeItem("cart");
+};
+
+const cartTotal = cart.reduce(
+  (sum, item) => sum + item.price * item.quantity,
+  0
+);
+
+const totalItems = cart.reduce(
+  (sum, item) => sum + item.quantity,
+  0
+);
+
+
   /* ---------------- WISHLIST ---------------- */
 
   const [wishlist, setWishlist] = useState(() => {
@@ -242,6 +258,9 @@ export const CartProvider = ({ children }) => {
         removeFromCart,
         incrementQty,
         decrementQty,
+        clearCart,
+        cartTotal,
+        totalItems,
         wishlist,
         toggleWishlist,
         isInWishlist,

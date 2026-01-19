@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { CartProvider } from "./context/CartContext";
+import Layout from "./components/Layout";
 import Header from "./components/Header";  
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -26,18 +27,20 @@ function App() {
   return (
     <CartProvider>
     <div className={`app ${pageClass}`}> 
-      <Header/>
+      {/* <Header/> */}
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/shop" element={<Shop />} />
-            <Route path="/product-details/:id" element={<ProductDetails />} />
-            <Route path="/cart" element={<CartPage />} />
-            <Route path="/checkout" element={<CheckoutPage />} />
-            <Route path="/contact" element={<ContactUs />} />
-            <Route path="/thank-you" element={<ThankYou />} />
-            <Route path="/wishlist" element={<Wishlist />} />
+            <Route element={<Layout />}>
+              <Route path="/" element={<Home />} />
+              <Route path="/shop" element={<Shop />} />
+              <Route path="/product-details/:id" element={<ProductDetails />} />
+              <Route path="/cart" element={<CartPage />} />
+              <Route path="/checkout" element={<CheckoutPage />} />
+              <Route path="/contact" element={<ContactUs />} />
+              <Route path="/thank-you" element={<ThankYou />} />
+              <Route path="/wishlist" element={<Wishlist />} />
+            </Route>
           </Routes>
-      <Footer/>
+      {/* <Footer/> */}
     </div>
     </CartProvider>
   )

@@ -1,8 +1,54 @@
-import { Link } from "react-router-dom"
+import { Link, Navigate, useNavigate } from "react-router-dom"
+import { useForm } from "react-hook-form"
+import { useContext, useEffect } from "react";
+import { CartContext } from "../context/CartContext";
 import BreadcrumbBanner from "../components/BreadcrumbBanner"
 import Button from "../components/Button"
 
 function CheckoutPage() {
+
+    const { cart, clearCart, cartTotal, totalItems } = useContext(CartContext);
+
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (cart.length === 0) {
+
+          alert("Your cart is empty. Redirecting to shop page.");
+
+          setTimeout(() => {
+            navigate("/shop", { replace: true });
+          }, 0); 
+        }
+      }, [cart.length, navigate]);
+
+    if (cart.length === 0) return null;
+
+    const { register, handleSubmit, formState: { errors, isSubmitting }} = useForm();
+
+    const onSubmit = (formData) => {
+
+            localStorage.setItem(
+            "checkoutDetails",
+            JSON.stringify(formData)
+            );
+
+            localStorage.setItem(
+            "orderSummary",
+            JSON.stringify({
+                totalAmount: cartTotal,
+                totalItems: totalItems,
+                orderDate: new Date().toISOString()
+            })
+            );
+
+            clearCart();
+
+            navigate("/thank-you");
+      };
+
+      
+
     return(
         <>
             <BreadcrumbBanner
@@ -10,7 +56,7 @@ function CheckoutPage() {
             /> 
             <section className="sectionGap">
                 <div className="container">
-                    <form>
+                    <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="row">
                             <div className="col-xl-7">
                                 <fieldset className="checkout-widget mb-5">
@@ -19,7 +65,16 @@ function CheckoutPage() {
                                         <div className="col-md-6">
                                             <div className="mb-3">
                                                 <label htmlFor="" className="required">First Name</label>
-                                                <input type="text" className="form-control" name="firstName" />
+                                                <input type="text" className="form-control" name="firstName" 
+                                                    {...register("firstName", {
+                                                        required: "First name is required",
+                                                        minLength: {
+                                                        value: 3,
+                                                        message: "Must be at least 3 characters",
+                                                        },
+                                                    })}
+                                                />
+                                                <span className="error">{errors.firstName?.message}</span>
                                             </div>
                                         </div>
                                         <div className="col-md-6">
@@ -154,23 +209,31 @@ function CheckoutPage() {
                                 <div className="checkout-summary checkout-widget">
                                     <p className="title mb-4">Your Order</p>
                                     <div id="checkout-items">
-                                        <div className="d-flex align-items-center mb-2 justify-content-between">
+                                    {cart.map((item) => (
+                                        <div key={item.id} className="d-flex align-items-center mb-2 justify-content-between">
                                             <div className="d-flex align-items-center">
                                             <div className="product-thumbnail">
-                                                <img alt="product" src="/images/products/product2.png" className="img-fluid"/>
+                                                <img
+                                                    src={item.image[0]}
+                                                    className="img-fluid"
+                                                    alt={item.name}
+                                                />
                                             </div>
-                                            <div className="product-name">Skin Serum <br/> <small className="py-1 px-2 border rounded-3">Quantity: 1</small></div>
+                                            <div className="product-name">{item.name}<br/> <small className="py-1 px-2 border rounded-3">Quantity: {item.quantity}</small></div>
                                             </div>
-                                            <div><strong><span className="amount">$15.00</span></strong></div>
+                                            <div><strong><span className="amount">${item.price.toFixed(2)}</span></strong></div>
                                             
                                         </div>
+                                    ))}
                                     </div>
                                     <div id="check-cart-foot">
                                         <ul>
                                             <ul>
                                                 <li className="d-flex justify-content-between mb-2">
                                                     Cart Subtotal
-                                                    <strong>$<span id="cart-sub-total">15.00</span></strong>
+                                                    <strong>$<span id="cart-sub-total">
+                                                    {cartTotal.toFixed(2)}
+                                                        </span></strong>
                                                 </li>
                                                 <li className="d-flex justify-content-between">
                                                     Shipping and Handling
@@ -179,17 +242,20 @@ function CheckoutPage() {
                                             </ul>
                                             <li className="d-flex justify-content-between">
                                                 <strong>Order Total</strong>
-                                                <strong>$<span id="cart-total2">15</span>.00</strong>
+                                                <strong>$<span id="cart-total2">
+                                                {cartTotal.toFixed(2)}</span></strong>
                                             </li>
                                         </ul>
                                         <div className="form-check mb-3">
                                         <input className="form-check-input" type="checkbox" value="" name="termsCheckbox" id="termsCheckbox"/>
-                                        <label className="form-check-label" for="termsCheckbox">
+                                        <label className="form-check-label" htmlFor="termsCheckbox">
                                             I have agree to the website <Link to="/terms" className="text-decoration-underline" target="_blank">terms and conditions.</Link>
                                         </label>
                                         
                                         </div>
-                                    <Button type="submit" variant="solid" className="w-100">complete checkout</Button>
+                                    <Button type="submit" variant="solid" className="w-100" disabled={isSubmitting}>
+                                        {isSubmitting ? "Placing Order..." : "Complete Checkout"}
+                                    </Button>
                                     </div>
                                 </div>
                                 
